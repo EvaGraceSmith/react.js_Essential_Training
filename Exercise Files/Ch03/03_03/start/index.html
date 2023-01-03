@@ -27,10 +27,18 @@
       function Main(props) {
         return (
           <section>
-            <p>
-              We serve the most {props.adjective}{" "}
-              food around.
-            </p>
+            <img 
+            height = {200}
+            src="../pexels-jonathan-borba-2878708.jpg" 
+            alt="serving tea and cheesecake"
+            />
+        <ul>
+          {props.dishes.map((dish) =>(
+            <li key={dish.id}>
+              {dish.title}
+              </li>
+            ))}
+        </ul>
           </section>
         );
       }
@@ -43,15 +51,31 @@
         );
       }
 
+      const dishes = [
+        "Twice Baked Potato Soup",
+        "Chicken Alfredo",
+        "Pizza",
+        "Triple Chocolate Mousse Cake"
+      ];
+      const dishObjects = dishes.map(
+        (dish, i) => ({
+        id: i,
+        title: dish
+      })
+      );
+
       function App() {
         return (
-          <div>
-            <Header name="Cindy" />
-            <Main adjective="amazing" />
+          <React.Fragment>
+            <Header name="Selah" />
+            <Main 
+            adjective="amazing" 
+            dishes={dishObjects}
+            />
             <Footer
               year={new Date().getFullYear()}
             />
-          </div>
+          </React.Fragment>
         );
       }
 
