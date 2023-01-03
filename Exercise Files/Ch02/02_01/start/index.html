@@ -10,19 +10,26 @@
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
       crossorigin
     ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>React ⚛️</title>
   </head>
   <body>
     
     <div id="root"></div>
-    <script type="text/javascript">
-      let heading =React.createElement(
-          "h1",
-          null,
-          "Getting Started with React!!"         
-        );
+    <script type="text/babel">
+let robot = "🤖";
+let cat = "😻";
+let kitty = "😼";
+let name = "React";
       ReactDOM.render(
-heading,
+  <ul>
+  <li>{robot}</li>
+  <li>{cat}</li>
+  <li>{kitty}</li>
+  <li>{name.toUpperCase()}</li>
+
+  </ul>,
+
         document.getElementById("root")
       );
     </script>
